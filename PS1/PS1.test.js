@@ -1,0 +1,1 @@
+const Ps1_Function = require('PS1.P1').A_Function
