@@ -5,6 +5,6 @@ const expression = A_Function("supercalifragilisticexpialidocious", function (re
 
 const expression1 = A_Function("supercalifragilisticexpialidocious", function (ret) {let i;let ret1 = ret;let n = 0;for(i = 0; i<ret1.length;i++)  { if(ret1[i] == 'a') {ret1[i] = 'A';n = n+1;}}return {originalString: ret,modifiedString: ret1,numberReplaced: n,length:		 	 ret.length}})
 
-
+module.exports = A_Function
 console.log(expression)
 console.log(expression1)
