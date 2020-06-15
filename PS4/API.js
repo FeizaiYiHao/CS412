@@ -1,6 +1,6 @@
 const API = {
-    Key : "dc81101f659320e37f83ed6bc630e371",
-    Base: "https://api.openweathermap.org/data/2.5/weather"
+    Key : "zKOb4xnoUN8nuJAXi8uHRYMmbnprLgWU",
+    Base: "http://open.mapquestapi.com/directions/v2/route"
 }
 
 module.exports = API
