@@ -19,16 +19,19 @@ describe('Distance API', () =>{
     it('should return 404', function (done) {
         chai.request(app)
             .post('/')
-            .end((err,response) => {
+            .end((err,response,body) => {
                 expect(response).to.have.status(404);
                 done();
             })
     })
-    it('should has body', function (done) {
+    it('should has from Irvine to Boston', function (done) {
         chai.request(app)
-            .get('/PS4')
-            .end((err,response) => {
-                expect(response).to.have.text(string,"<h1>PS4</h1><p>From Orange County to Suffolk County is 2991.553 miles</p>");
+            .post('/PS4/')
+            .send({from:"Irvine"})
+            .send({to:"Boston"})
+            .end((err,response,body) => {
+                expect(response.request._data.from).to.equal("Irvine");
+                expect(response.request._data.to).to.equal("Boston");
                 done();
             })
     }).timeout(10000)
