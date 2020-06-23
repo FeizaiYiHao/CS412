@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
-const PS4Router = require('./routes/PS4');
+const PS4Router = require('./routes/PS5b');
 
 const app = express();
 
