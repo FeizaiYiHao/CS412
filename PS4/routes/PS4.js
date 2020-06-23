@@ -24,14 +24,21 @@ router.post('/', async function(req, res, next) {
         if(err){ throw new Error(err)}
         if(response == 1){
             client.get(key,(err,response)=>{
+                response = JSON.parse(response)
+                response.cached = true;
                 res.send(response);
             })
         }
         else{
             let value = await fetch(API.Base + "?" + "key=" + API.Key + "&from=" + req.body.from + "&to=" + req.body.to);
-            res.send(JSON.stringify(value + "NOT CACHED"))
-            client.set(key,JSON.stringify(value + "CACHED"),(err)=>{
+            let result = await value.json();
+            console.log(result);
+            client.set(key,JSON.stringify(result),(err)=>{
+                if(err){ throw new Error(err)}
                 client.expire(key,30);
+                result.cached = false;
+                res.send(result);
+
             });
         }
     })
