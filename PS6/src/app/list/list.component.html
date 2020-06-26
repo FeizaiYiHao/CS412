@@ -1,0 +1,12 @@
+<div name="outerList">
+  <ul *ngFor="let Distance of DistanceList">
+
+    <li (click)="showLastName(Distance.To)">{{Distance.To}} </li>
+
+  </ul>
+</div>
+
+<div name="details" *ngIf="selectedPlace">
+  <input name="lastName" type="text" value="{{selectedPlace.Distance}}"> miles
+
+</div>
