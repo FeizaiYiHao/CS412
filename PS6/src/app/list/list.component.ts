@@ -17,7 +17,7 @@ export class ListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  showLastName(Name: string) {
+  ShowName(Name: string) {
     this.selectedPlace  = this.DistanceList.find(name => name.To === Name);
   }
 }
