@@ -103,4 +103,7 @@ dist
 # TernJS port file
 .tern-port
 
-/PS3/node_modules/
+/PS5b/node_modules/
+/.idea
+/PS7/node_modules/
+/PS7/.idea
