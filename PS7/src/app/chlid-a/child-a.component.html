@@ -1,13 +1,12 @@
 <p>chlid-a works!</p>
 
-<form (ngSubmit)="getDistance()">
-  From: <input name="from" [formControl]="from">
-  To: <input name="to" [formControl]="to">
+From: <input name="from" [formControl]="from">
+To: <input name="to" [formControl]="to">
 
   <div name="details" *ngIf="from.value !='' && to.value !=''" >
 
-    <button type="submit">query</button>
+    <button (click)="getDistance()">query</button>
   </div>
-</form>
+
 
 
