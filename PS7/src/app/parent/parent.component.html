@@ -1,2 +1,5 @@
 <p>parent works!</p>
-<app-chlid-a></app-chlid-a>
+<app-chlid-a (emitter)="passInfo($event)" (emitter2)="passCacheInfo($event)"></app-chlid-a>
+<app-child-b [IsCached]="IsCached"
+             [CurrentDistance]="CurrentDistance"
+></app-child-b>

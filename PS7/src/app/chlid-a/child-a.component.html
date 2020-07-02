@@ -1,15 +1,13 @@
 <p>chlid-a works!</p>
 
 <form (ngSubmit)="getDistance()">
-  From: <input name="from" [(ngModel)]="from">
-  To: <input name="to" [(ngModel)]="to">
+  From: <input name="from" [formControl]="from">
+  To: <input name="to" [formControl]="to">
 
-  <div name="details" *ngIf="from !='' && to !=''" >
+  <div name="details" *ngIf="from.value !='' && to.value !=''" >
 
     <button type="submit">query</button>
   </div>
 </form>
-<app-child-b [IsCached]="IsCached"
-             [CurrentDistance]="CurrentDistance"
-></app-child-b>
+
 
